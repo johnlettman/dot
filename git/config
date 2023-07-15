@@ -1,11 +1,7 @@
-[color]
-    ui = auto
-    diff = auto
-    branch = auto
-    grep = auto
-    interactive = auto
-    status = auto
 
+############
+# Identity #
+############
 [github]
     user = johnlettman
 
@@ -14,16 +10,46 @@
     email = the@johnlettman.com
     signingkey = 8CE505CF86B53CC3
 
+# Canonical identity override
+# occurs for any repositories within ~/repos/canonical
+[includeIf "gitdir:~/repos/canonical/**"]
+    path = .gitconfig.canonical
+
+#############
+# Interface #
+#############
+[color]
+    ui = auto
+    diff = auto
+    branch = auto
+    grep = auto
+    interactive = auto
+    status = auto
+
+[color "grep"]
+	match = cyan bold
+	selected = blue
+	context = normal
+	filename = magenta
+	linenumber = green
+	separator = yellow
+	function = blue
+
+[pretty]
+	line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
+	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+
 [log]
     date = auto:human
 
 [commit]
+    gpgsign = true
 	verbose = true
 
-[includeIf "gitdir:~/repos/canonical/**"]
-    path = .gitconfig.canonical
 
-
+######################
+# Remote URL aliases #
+######################
 [url "git+ssh://jplettman@git.launchpad.net/"]
     insteadof = lp:
 
@@ -35,6 +61,9 @@
     pushInsteadOf = "http://github.com/"
     pushInsteadOf = "gh:"
 
+###################
+# Command aliases #
+###################
 [alias]
     b = branch -vva
     c = commit
@@ -62,3 +91,7 @@
 
     # yadm untracked
     untracked = !"f() { git status --porcelain=v1 -zunormal | xargs -0n1 printf \"%s\\n\" | grep -E '^\\?\\? \\.' | cut -c4-; }; f"
+
+
+	linecredit = ! "lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
+    credit = shortlog -sn
