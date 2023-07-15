@@ -1,0 +1,8 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    ~/.gitconfig: git/config
+    ~/.gitconfig.canonical: git/canonical
