@@ -4,5 +4,6 @@
       relink: true
 
 - link:
+    ~/.gitignore: git/ignore
     ~/.gitconfig: git/config
-    ~/.gitconfig.canonical: git/canonical
+    ~/.gitconfig.canonical: git/config.canonical

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "git/*": "gitconfig"
+        "git/config*": "gitconfig",
+        "git/ignore": "ignore"
     }
 }

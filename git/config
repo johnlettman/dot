@@ -17,7 +17,8 @@
 [log]
     date = auto:human
 
-
+[commit]
+	verbose = true
 
 [includeIf "gitdir:~/repos/canonical/**"]
     path = .gitconfig.canonical
