@@ -7,3 +7,5 @@
     ~/.gitignore: git/ignore
     ~/.gitconfig: git/config
     ~/.gitconfig.canonical: git/config.canonical
+
+    ~/.hushlogin:
