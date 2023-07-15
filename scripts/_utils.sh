@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -e;
+set -u;
+set -o pipefail;
+
+# shellcheck source=SCRIPTDIR/log/log.sh
+scripts_dir="$(dirname "$(realpath "${BASH_SOURCE[0]:-$0}")")";
+
+source "${scripts_dir}/log/log.sh";
+
+prev_dir="$(pwd)";
+repo_dir="${scripts_dir}/../";
+
+pushd . >'/dev/null' || \
+    log debug "Unable to push previous directory. No problem.";
+
+# while the path refers to a symbolic link,
+# read the link until we achieve the real path
+while [ -h "${repo_dir}" ]; do 
+    cd "$(dirname -- "${repo_dir}")" || {
+        log error "Unable to change directories; something is wrong!";
+        exit 1;
+    };
+
+    repo_dir="$(readlink -f -- "${repo_dir}")";
+done;
+
+# return to the previous directory prior to these operations
+popd >'/dev/null' || cd "${prev_dir}" || {
+    log error \
+        "Unable to return to prior directory!" \
+        "Prior directory: ${prev_dir}";
+};
+
+unset prev_dir;
+export repo_dir;

@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 set -e;
-pushd . > '/dev/null';
-repo_dir="${BASH_SOURCE[0]:-$0}";
-while [ -h "${repo_dir}" ]; do
-    cd "$(dirname -- "${repo_dir}")";
-    repo_dir="$(readlink -f -- "${repo_dir}")";
-done;
-
-cd "$(dirname -- "${repo_dir}")" > '/dev/null';
-repo_dir="$(pwd)";
-popd > '/dev/null';
 
 config="${repo_dir}/.install.yaml";
 dotbot_dir="${repo_dir}/.dotbot";

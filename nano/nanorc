@@ -1,0 +1,204 @@
+# Nano's ANOther editor configuration
+# 📂 ~/.config/nano/nanorc
+
+
+#################
+# Functionality #
+#################
+# Permit suspending nano with ^Z.
+set suspend
+
+# Maintain a log of history for the file using `{filename}~`.
+set historylog
+
+# Disable line wrapping.
+#set nowrap
+
+# Preserve the XON ^Q and XOFF ^S keys for the terminal.
+set preserve
+
+# Disable massive shortcut help block from the bottom of the interface.
+set nohelp
+
+###########
+# Writing #
+###########
+# Configure dictionary.
+set speller "aspell"
+
+# Configure tabination.
+set tabstospaces
+set tabsize 4       
+
+# Automatically indent newlines based upon the prior line indentation.
+set autoindent
+
+# Keep original end-of-line formatting.
+set noconvert
+
+# Detect word boundaries more accurately by treating punctuation characters as
+# part of a word.
+set wordbounds
+
+# [DEL] and [BACKSPACE] zaps marked regions.
+set zap
+
+# Configure bracket matching.
+set brackets ""')>]}"
+set matchbrackets "(<[{)>]}"
+
+# Configure punctuation.
+set punct "!.?"
+
+##############
+# Navigation #
+##############
+# Enable mouse support.
+set mouse
+
+# Constantly show the position of the cursor in the status bar.
+set constantshow
+
+# Display line-numbering.
+set linenumbers
+
+# Home key jumps to the first non-whitespace character.
+# Second key-press jumps to the start of the line.
+set smarthome
+
+# Use regular expressions for searching.
+set regexp
+
+#########################
+# User interface colors #
+#########################
+set errorcolor brightwhite,red
+set functioncolor green
+set keycolor cyan
+set numbercolor cyan
+set selectedcolor brightwhite,magenta
+set statuscolor cyan
+set stripecolor ,yellow
+set titlecolor brightwhite,blue
+
+# Enable bold characters.
+set boldtext
+
+#######################
+# Syntax highlighting #
+#######################
+include "/home/jlettman/.dot/nano/syntax-highlighting/nginx.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/js.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/apacheconf.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/jade.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/keymap.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/scala.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/xml.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/reST.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/csh.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/markdown.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/sparql.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/cython.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/c.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/rego.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/privoxy.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/vi.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/go.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/conky.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/tex.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/systemd.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/conf.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/email.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/glsl.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/batch.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/zsh.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/Dockerfile.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/perl6.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/gentoo.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/haml.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/tcl.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/sls.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ini.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/json.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/asm.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/php.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/python.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/peg.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/Rnw.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/pkg-config.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/sed.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/pug.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/dot.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/svn.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/verilog.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/awk.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/csv.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/zshrc.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/csharp.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/powershell.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/genie.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/makefile.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/xresources.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/arduino.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/swift.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/git.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/javascript.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/cmake.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/pkgbuild.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/inputrc.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/fortran.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/prolog.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/creole.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/dotenv.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/kickstart.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/lua.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/asciidoc.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/lisp.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/octave.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/colortest.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/twig.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/mpdconf.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/nmap.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/rust.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/java.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/patch.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/yum.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/toml.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/hcl.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/clojure.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/puppet.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ical.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/kotlin.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/perl.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/x11basic.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/i3.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/yaml.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/properties.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/sh.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/erb.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ocaml.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/html.j2.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/po.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/rpmspec.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/vala.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/groff.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/css.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ts.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/zig.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/etc-hosts.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/moonscript.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/m3u.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/haskell.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/gradle.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/fsharp.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/sql.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/coffeescript.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/gitcommit.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ruby.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/elixir.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/fish.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/html.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/nanorc.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/man.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/ledger.nanorc"
+include "/home/jlettman/.dot/nano/syntax-highlighting/pov.nanorc"
