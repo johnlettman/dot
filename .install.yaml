@@ -12,3 +12,5 @@
 
     ~/.config/nano/nanorc: nano/nanorc 
     ~/.config/nano/syntax-highlighting: nano/syntax-highlighting
+
+    ~/.config/htop/htoprc:
