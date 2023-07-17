@@ -7,3 +7,6 @@
 [submodule "scripts/log"]
 	path = scripts/log
 	url = https://github.com/bownie/bashlog
+[submodule "less/lesspipe"]
+	path = less/lesspipe
+	url = https://github.com/wofr06/lesspipe.git
