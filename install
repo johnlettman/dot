@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e;
+source "$(dirname "${BASH_SOURCE[0]}")/scripts/_utils.sh";
 
 config="${repo_dir}/.install.yaml";
 dotbot_dir="${repo_dir}/.dotbot";
