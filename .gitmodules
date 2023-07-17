@@ -10,3 +10,12 @@
 [submodule "less/lesspipe"]
 	path = less/lesspipe
 	url = https://github.com/wofr06/lesspipe.git
+[submodule "demos/_pipes"]
+	path = demos/_pipes
+	url = https://github.com/pipeseroni/pipes.sh
+[submodule "demos/_pipesx"]
+	path = demos/_pipesx
+	url = https://github.com/pipeseroni/pipesX.sh.git
+[submodule "demos/_rain"]
+	path = demos/_rain
+	url = https://github.com/lbgists/rain.sh.git
