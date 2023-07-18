@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+export PYENV_ROOT="${HOME}/.pyenv";
+prepend_path "${PYENV_ROOT}/bin";
+eval "$(pyenv init --path)";

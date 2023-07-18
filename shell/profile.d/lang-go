@@ -1,0 +1,9 @@
+#!/bin/sh
+if command -v go >/dev/null 2>&1; then
+    export GOPATH="${HOME}/repos/go";
+    append_path "${GOPATH}/bin";
+
+    if [ ! -d "${GOPATH}" ]; then
+        mkdir -p "${GOPATH}";
+    fi;
+fi;

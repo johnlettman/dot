@@ -12,10 +12,13 @@
 
     ~/.hushlogin:
 
-    ~/.config/nano/nanorc: nano/nanorc 
-    ~/.config/nano/syntax-highlighting: nano/syntax-highlighting
+    ~/.config/nano:
+    ~/.config/htop:
+    ~/.config/less:
 
-    ~/.config/htop/htoprc: htop/htoprc
+    ~/.profile: shell/profile
+    ~/.profile.d: shell/profile.d
+    ~/.functions.d: shell/functions.d
 
 - sudo:
     - snap:
@@ -30,5 +33,12 @@
         telegram-desktop:
 
     - aptget:
+        # shell utilities
+        fzf:
+
+        # sysadmin utilities
+        procinfo:
+
+
         python-is-python3:
         emacs:

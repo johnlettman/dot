@@ -1,0 +1,5 @@
+#!/bin/sh
+export NPM_PACKAGES="${HOME}/.npm-packages";
+
+append_path "${NPM_PACKAGES}/bin";
+append_manpath "${NPM_PACKAGES}/share/man";

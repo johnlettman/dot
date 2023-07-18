@@ -1,0 +1,6 @@
+#!/bin/sh
+export GISTS="${HOME}/repos/gists";
+
+if [ ! -d "${GISTS}" ]; then
+    mkdir -p "${GISTS}";
+fi;

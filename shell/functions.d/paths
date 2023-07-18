@@ -1,0 +1,46 @@
+#!/bin/sh
+
+in_path() {
+    echo "${PATH}" | tr ':' '\n' | grep -qx "$1";
+}
+
+prepend_path() {
+    for dir in "$@"; do
+        if [ -d "${dir}" ] && ! in_path "${dir}"; then
+            if [ -z "${PATH}" ]; then PATH="${dir}";
+            else PATH="${dir}:${PATH}"; fi;
+        fi;
+    done;
+}
+
+append_path() {
+    for dir in "$@"; do 
+        if [ -d "${dir}" ] && ! in_path "${dir}"; then
+            if [ -z "${PATH}" ]; then PATH="${dir}";
+            else PATH="${PATH}:${dir}"; fi;
+        fi;
+    done;
+}
+
+
+in_manpath() {
+    echo "${MANPATH}" | tr ':' '\n' | grep -qx "$1";
+}
+
+prepend_manpath() {
+    for dir in "$@"; do
+        if [ -d "${dir}" ] && ! in_path "${dir}"; then
+            if [ -z "${MANPATH}" ]; then MANPATH="${dir}";
+            else MANPATH="${dir}:${MANPATH}"; fi;
+        fi;
+    done;
+}
+
+append_manpath() {
+    for dir in "$@"; do 
+        if [ -d "${dir}" ] && ! in_path "${dir}"; then
+            if [ -z "${MANPATH}" ]; then MANPATH="${dir}";
+            else MANPATH="${MANPATH}:${dir}"; fi;
+        fi;
+    done;
+}

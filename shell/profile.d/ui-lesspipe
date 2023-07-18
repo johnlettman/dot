@@ -1,0 +1,5 @@
+#!/bin/sh
+lesspipe="${HOME}/.config/less/lesspipe/lesspipe.sh";
+if [ -f "${lesspipe}" ]; then
+    eval "$(SHELL=/bin/sh "${lesspipe}")";
+fi;
