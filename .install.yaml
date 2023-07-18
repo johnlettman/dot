@@ -2,6 +2,8 @@
     link:
       create: true
       relink: true
+    aptget:
+      upgrade: true
 
 - link:
     ~/.gitignore: git/ignore
@@ -14,3 +16,19 @@
     ~/.config/nano/syntax-highlighting: nano/syntax-highlighting
 
     ~/.config/htop/htoprc: htop/htoprc
+
+- sudo:
+    - snap:
+
+        jq:
+        yq:
+
+        # instant messaging applications
+        discord:
+        caprine:
+        mattermost-desktop:
+        telegram-desktop:
+
+    - aptget:
+        python-is-python3:
+        emacs:

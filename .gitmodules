@@ -19,3 +19,12 @@
 [submodule "demos/_rain"]
 	path = demos/_rain
 	url = https://github.com/lbgists/rain.sh.git
+[submodule ".dotbot-plugins/snap"]
+	path = .dotbot-plugins/snap
+	url = https://github.com/DrDynamic/dotbot-snap.git
+[submodule ".dotbot-plugins/aptget"]
+	path = .dotbot-plugins/aptget
+	url = https://github.com/johnlettman/dotbot-aptget.git
+[submodule ".dotbot-plugins/sudo"]
+	path = .dotbot-plugins/sudo
+	url = https://github.com/johnlettman/dotbot-sudo.git

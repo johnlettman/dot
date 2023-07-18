@@ -25,6 +25,13 @@ while [ -h "${repo_dir}" ]; do
     repo_dir="$(readlink -f -- "${repo_dir}")";
 done;
 
+cd "${repo_dir}" || {
+    log error "Unable to change directories; something is wrong!";
+    exit 1;
+};
+
+repo_dir="$(pwd)";
+
 # return to the previous directory prior to these operations
 popd >'/dev/null' || cd "${prev_dir}" || {
     log error \
@@ -34,3 +41,16 @@ popd >'/dev/null' || cd "${prev_dir}" || {
 
 unset prev_dir;
 export repo_dir;
+
+
+join() {
+    local prefix="$1";
+    shift;
+    local arr=("$@");
+
+    for i in "${!arr[@]}"; do
+        arr[i]="${prefix}${arr[i]}";
+    done;
+
+    echo "${arr[*]}";
+}
