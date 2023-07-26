@@ -15,7 +15,8 @@
     ~/.config/nano:
     ~/.config/htop:
     ~/.config/less:
-
+    
+    ~/.nvm:
     ~/.profile: shell/profile
     ~/.profile.d: shell/profile.d
     ~/.functions.d: shell/functions.d
@@ -38,7 +39,11 @@
 
         # sysadmin utilities
         procinfo:
+        hdparm:
 
+        # android tools
+        android-tools-adb:
+        android-tools-fastboot:
 
         python-is-python3:
         emacs:
