@@ -22,6 +22,10 @@
     ~/.functions.d: shell/functions.d
 
 - sudo:
+    - link:
+        /etc/apt/preferences.d/disallow-games.pref: system/apt/preferences.d/disallow-games.pref
+        /etc/apt/preferences.d/disallow-grub.pref: system/apt/preferences.d/disallow-grub.pref
+        
     - snap:
 
         jq:

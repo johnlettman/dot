@@ -1,0 +1,3 @@
+Package: foo
+Pin: release *
+Pin-Priority: -1

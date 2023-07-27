@@ -1,0 +1,19 @@
+Package: os-prober
+Pin: release *
+Pin-Priority: -1
+
+Package: grub-pc
+Pin: release *
+Pin-Priority: -1
+
+Package: grub-pc-bin
+Pin: release *
+Pin-Priority: -1
+
+Package: grub-common
+Pin: release *
+Pin-Priority: -1
+
+Package: grub2-common
+Pin: release *
+Pin-Priority: -1
