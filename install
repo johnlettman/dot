@@ -8,9 +8,10 @@ dotbot_plugins_dir="${repo_dir}/.dotbot-plugins";
 dotbot_bin="${dotbot_dir}/bin/dotbot";
 
 dotbot_plugins=(
-    "sudo/sudo.py"
     "aptget/aptget.py"
+    "git/git.py"
     "snap/snap.py"
+    "sudo/sudo.py"
 );
 
 git -C "${dotbot_dir}" submodule sync --quiet --recursive;
