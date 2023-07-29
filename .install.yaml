@@ -21,6 +21,8 @@
     ~/.profile.d: shell/profile.d
     ~/.functions.d: shell/functions.d
 
+
+
 - sudo:
     - link:
         /etc/apt/preferences.d/disallow-games.pref: system/apt/preferences.d/disallow-games.pref
@@ -28,6 +30,10 @@
 
     - snap:
 
+        # diagnostic tools
+        hotsos:
+
+        # query tools
         jq:
         yq:
 
@@ -40,6 +46,10 @@
     - aptget:
         # shell utilities
         fzf:
+        curl:
+
+        # prefer python3
+        python-is-python3:
 
         # sysadmin utilities
         procinfo:
@@ -49,5 +59,22 @@
         adb:
         fastboot:
 
-        python-is-python3:
+        # build dependencies
+        build-essential:
+
+        # python build dependencies
+        libssl-dev:
+        zlib1g-dev:
+        libbz2-dev:
+        libreadline-dev:
+        libsqlite3-dev:
+        libncursesw5-dev:
+        xz-utils:
+        libxml2-dev:
+        libxmlsec1-dev:
+        libffi-dev:
+        liblzma-dev:
+        tk-dev:
+
+        # editor
         emacs:
