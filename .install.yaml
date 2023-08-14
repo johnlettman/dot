@@ -20,13 +20,27 @@
     ~/.profile.d: shell/profile.d
     ~/.functions.d: shell/functions.d
 
+    ~/.zshrc: shell/zsh/zshrc.zsh
+
+    ~/.ansiweatherrc:
+
+
 - git:
+    ~/.fonts/nerd-fonts:
+        description: Nerd Fonts
+        url: https://github.com/ryanoasis/nerd-fonts.git
+        method: clone-or-pull
+
     ~/.nvm:
         description: Node Version Manager
         url: https://github.com/nvm-sh/nvm.git
         branch: v0.39.4
         method: clone-or-pull
-
+    ~/.zplug:
+        description: Zsh Plugin Manager
+        url: https://github.com/zplug/zplug.git
+        branch: 2.4.2
+        method: clone-or-pull
 
 - sudo:
     - link:
@@ -63,6 +77,8 @@
         fzf:
         curl:
         fd-find:
+        shfmt:
+        bat:
 
         # prefer python3
         python-is-python3:

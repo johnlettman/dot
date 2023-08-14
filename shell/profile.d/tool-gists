@@ -1,6 +1,9 @@
 #!/bin/sh
-export GISTS="${HOME}/repos/gists";
+export GISTS="${HOME}/repos/gists"
 
 if [ ! -d "${GISTS}" ]; then
-    mkdir -p "${GISTS}";
-fi;
+    mkdir -p "${GISTS}"
+fi
+
+# shellcheck disable=SC2139
+alias gists="cd ${GISTS}"

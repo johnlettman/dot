@@ -1,32 +1,21 @@
 #!/bin/sh
 [ -d "${HOME}/.functions.d" ] && for file in "${HOME}/.functions.d"/*; do
     # shellcheck disable=SC1090
-    . "${file}";
-done;
+    . "${file}"
+done
 
 [ -d "${HOME}/.profile.d" ] && for file in "${HOME}/.profile.d"/*; do
     # shellcheck disable=SC1090
-    . "${file}";
-done;
+    . "${file}"
+done
 
-[ -d "${HOME}/.local/bin" ] && prepend_path "${HOME}/.local/bin";
-[ -d "${HOME}/.bin" ]       && prepend_path "${HOME}/.bin";
-[ -d "${HOME}/bin" ]        && prepend_path "${HOME}/bin";
+[ -d "${HOME}/.local/bin" ] && prepend_path "${HOME}/.local/bin"
+[ -d "${HOME}/.bin" ] && prepend_path "${HOME}/.bin"
+[ -d "${HOME}/bin" ] && prepend_path "${HOME}/bin"
 
-
-
-export GPGKEY='C0CECF66705141610001CA728CE505CF86B53CC3';
-
-
-
-
-export CUDA_HOME=/usr/local/cuda-11
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
+# Fix missing snap application icons in KDE
 export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/snapd/desktop"
 
+export GPGKEY='C0CECF66705141610001CA728CE505CF86B53CC3'
 
-
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket";
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
