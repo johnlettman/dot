@@ -64,7 +64,8 @@ alias -g S='| sort'
 alias -g G='| grep'
 
 # Tips
-zplug "djui/alias-tips"
+# zplug "djui/alias-tips"
+zplug "akash329d/zsh-alias-finder"
 
 #
 # Git
@@ -122,3 +123,5 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+set -o emacs

@@ -1,0 +1,17 @@
+Explanation: Disallow the KDE games metapackage.
+Package: kdegames
+Pin: release *
+Pin-Priority: -1
+
+Explanation: Disallow KDE games and data.
+Package:
+    bomber bovo granatier kajongg kapman katomic kblackbox kblocks kbounce
+    kbreakout kdiamond kfourinline kgeography kgoldrunner kigo killbots kiriki
+    kjumpingcube klickety klines kmahjongg kmines knavalbattle knetwalk kolf
+    kollision konquest kpat kreversi kshisen ksirk ksnakeduel kspaceduel
+    ksquares ksudoku ktuberling ktuberling-data kubrick libkf5kdegames-data
+    libkf5kdegames7 libkf5kdegamesprivate7 libkf5kmahjongglib5 lskat palapeli
+    palapeli-data picmi qml-module-org-kde-games-core kdegames-card-data-kf5
+    kdegames-mahjongg-data-kf5
+Pin: release *
+Pin-Priority: -1

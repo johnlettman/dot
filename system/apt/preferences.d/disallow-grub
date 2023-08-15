@@ -1,0 +1,28 @@
+Explanation: Disallow grub and its tools to prefer a different bootloader.
+Package: 
+    os-prober 
+    grub-gfxpayload-lists
+    grub2 grub2-common
+    grub-pc grub-pc-bin grub-pc:i386 grub-pc-bin:i386
+    grub-common grub2-common grub-common:i386 grub2-common:i386
+    grub-efi grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-dbg 
+    grub-efi-amd64-signed grub-efi-amd64-signed-template grub-efi-ia32
+    grub-efi-ia32-bin grub-efi-ia32-dbg
+    grub-linuxbios
+    grub-emu grub-emu-dbg
+    grub-coreboot grub-coreboot-bin grub-coreboot-dbg
+    grub-ieee1275 grub-ieee1275-bin grub-ieee1275-dbg
+    grub-xen grub-xen-bin grub-xen-dbg grub-xen-host
+    grubzfs-testsuite
+    grub-invaders
+    lilo
+Pin: release *
+Pin-Priority: -1
+
+Explanation: Disallow grub themes.
+Package:
+    grub-theme-breeze grub-theme-starfield 
+    grub2-themes-ubuntu-mate grub2-themes-ubuntustudio 
+    grub-splashimages
+Pin: release *
+Pin-Priority: -1

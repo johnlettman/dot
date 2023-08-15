@@ -1,9 +1,13 @@
 - defaults:
-    link:
-      create: true
-      relink: true
     aptget:
-      upgrade: true
+        upgrade: true
+    link:
+        create: true
+        relink: true
+    sync:
+        stdout: true
+        stderr: true
+        create: true
 
 - link:
     ~/.gitignore: git/ignore
@@ -25,6 +29,17 @@
     ~/.ansiweatherrc:
 
 
+- if:
+    cond: hostname | grep -q 'whiterig'
+    met:
+        - sudo:
+            - sync:
+                /etc/modprobe.d:
+                    path: '@whiterig/system/modprobe.d'
+                    owner: root
+                    group: root
+     
+
 - git:
     ~/.fonts/nerd-fonts:
         description: Nerd Fonts
@@ -36,16 +51,24 @@
         url: https://github.com/nvm-sh/nvm.git
         branch: v0.39.4
         method: clone-or-pull
+
     ~/.zplug:
         description: Zsh Plugin Manager
         url: https://github.com/zplug/zplug.git
         branch: 2.4.2
         method: clone-or-pull
 
+    ~/.local/lesspipe:
+        description: lesspipe
+        url: https://github.com/wofr06/lesspipe.git
+        method: clone-or-pull
+
 - sudo:
-    - link:
-        /etc/apt/preferences.d/disallow-games.pref: system/apt/preferences.d/disallow-games.pref
-        /etc/apt/preferences.d/disallow-grub.pref: system/apt/preferences.d/disallow-grub.pref
+    - sync:
+        /etc/apt/preferences.d: 
+            path: system/apt/preferences.d
+            owner: root
+            group: root
 
     - snap:
         # syseng
@@ -79,6 +102,7 @@
         fd-find:
         shfmt:
         bat:
+        command-not-found:
 
         # prefer python3
         python-is-python3:

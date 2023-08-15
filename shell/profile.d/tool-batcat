@@ -1,0 +1,5 @@
+#!/bin/sh
+if program_exists batcat; then
+    # Fix Ubuntu `bat` utility naming
+    alias bat=batcat
+fi

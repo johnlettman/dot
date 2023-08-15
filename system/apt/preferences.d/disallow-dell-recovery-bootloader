@@ -1,0 +1,4 @@
+Explanation: Disallow the Dell recovery bootloader (we never use this).
+Package: dell-recovery-bootloader
+Pin: release *
+Pin-Priority: -1

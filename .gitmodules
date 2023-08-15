@@ -6,10 +6,7 @@
 	url = https://github.com/scopatz/nanorc.git
 [submodule "scripts/log"]
 	path = scripts/log
-	url = https://github.com/bownie/bashlog
-[submodule "less/lesspipe"]
-	path = less/lesspipe
-	url = https://github.com/wofr06/lesspipe.git
+	url = https://github.com/bownie/bashlogS
 [submodule "demos/_pipes"]
 	path = demos/_pipes
 	url = https://github.com/pipeseroni/pipes.sh
@@ -31,3 +28,9 @@
 [submodule ".dotbot-plugins/git"]
 	path = .dotbot-plugins/git
 	url = https://github.com/DrDynamic/dotbot-git.git
+[submodule ".dotbot-plugins/sync"]
+	path = .dotbot-plugins/sync
+	url = https://github.com/j1r1k/dotbot-sync.git
+[submodule ".dotbot-plugins/if"]
+	path = .dotbot-plugins/if
+	url = https://github.com/wonderbeyond/dotbot-if.git

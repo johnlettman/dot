@@ -1,0 +1,19 @@
+#!/bin/sh
+# Install lesspipe.
+if [ -r "${HOME}/.local/lesspipe/lesspipe.sh" ]; then
+    export LESSPIPE="${HOME}/.local/lesspipe/lesspipe.sh"
+
+    append_path "${HOME}/.local/lesspipe/"
+    append_manpath "${HOME}/.local/lesspipe/"
+
+    if [ -f "${LESSPIPE}" ]; then
+        eval "$(SHELL=/bin/sh "${LESSPIPE}")"
+    fi
+fi
+
+# Set the default Less options.
+# Mouse-wheel scrolling can be disabled with -X (disable screen clearing).
+# Add -X to disable it.
+if [ -z "${LESS}" ]; then
+    export LESS='-g -i -M -R -S -w -z-4'
+fi

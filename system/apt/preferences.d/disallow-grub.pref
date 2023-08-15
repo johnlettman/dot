@@ -1,3 +1,0 @@
-Package: os-prober grub-pc grub-pc-bin grub-common grub2-common grub-common:i386 grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed grub2-common:i386 lilo
-Pin: release *
-Pin-Priority: -1
