@@ -1,0 +1,114 @@
+#
+# Initialization
+#
+[init]
+	defaultBranch = main
+
+#
+# Identity
+#
+[github]
+  user = johnlettman
+
+[user]
+	name = John Lettman
+  email = the@johnlettman.com
+  signingkey = 86B53CC3
+
+[gpg]
+	program = gpg2
+
+# Integrity Environment identity override
+[includeIf "gitdir:~/repos/iei/**"]
+  path = .gitconfig.iei
+
+[includeIf "gitdir:~/repos/@iei/**"]
+  path = .gitconfig.iei
+
+#
+# Interface
+#
+[color]
+  ui = auto
+  diff = auto
+  branch = auto
+  grep = auto
+  interactive = auto
+  status = auto
+
+[color "grep"]
+	match = cyan bold
+	selected = blue
+	context = normal
+	filename = magenta
+	linenumber = green
+	separator = yellow
+	function = blue
+
+[pretty]
+	line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
+	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+
+[log]
+  date = auto:human
+
+[commit]
+  gpgsign = true
+	verbose = true
+
+#
+# Remote URL aliases
+#
+[url "https://github.com/"]
+    insteadOf = "gh:"
+
+[url "git@github.com:"]
+    pushInsteadOf = "https://github.com/"
+    pushInsteadOf = "http://github.com/"
+    pushInsteadOf = "gh:"
+
+#
+# Command aliases
+#
+[alias]
+  b = branch -vva
+  c = commit
+  ca = commit -a
+  co = checkout
+  d = diff --color-words
+  l = log --stat
+  m = mergetool
+  r = remote -v
+  s = status -uno
+  su = status -uno -u
+  ls = ls-files
+
+  subup   = submodule update --init --recursive
+  subpull = submodule update --init --remote
+
+  ## Current branch
+  current = rev-parse --abbrev-ref HEAD
+
+  ## Log graphs
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lgi = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # yadm untracked
+  untracked = !"f() { git status --porcelain=v1 -zunormal | xargs -0n1 printf \"%s\\n\" | grep -E '^\\?\\? \\.' | cut -c4-; }; f"
+
+  # Credit
+	linecredit = ! "lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
+  credit = shortlog -sn
+
+#
+# Git LFS
+#
+[core]
+	autocrlf = input
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

@@ -1,0 +1,27 @@
+[submodule ".dotbot"]
+	path = .dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule ".scripts/bashlog"]
+	path = .scripts/bashlog
+	url = https://github.com/bownie/bashlog
+[submodule ".plugins/yay"]
+	path = .plugins/yay
+	url = https://github.com/oxson/dotbot-yay
+[submodule ".plugins/ifhostname"]
+	path = .plugins/ifhostname
+	url = https://github.com/johnlettman/dotbot-ifhostname.git
+[submodule ".plugins/git"]
+	path = .plugins/git
+	url = https://github.com/DrDynamic/dotbot-git.git
+[submodule ".plugins/if"]
+	path = .plugins/if
+	url = https://github.com/wonderbeyond/dotbot-if.git
+[submodule ".plugins/pacman"]
+	path = .plugins/pacman
+	url = https://github.com/omegarogue/dotbot-pacman
+[submodule "bat/themes/base16-eighties-dark"]
+	path = .themes/base16-eighties-dark
+	url = https://github.com/pgaspar/base16-eighties-dark.git
+[submodule ".plugins/sudo"]
+	path = .plugins/sudo
+	url = https://github.com/johnlettman/dotbot-sudo.git

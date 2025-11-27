@@ -1,0 +1,79 @@
+add_newline = false
+format = """\
+  $battery$golang$nodejs$rust$python\
+  $username$hostname$directory\
+  $git_branch$git_commit$git_state$git_status\
+  $character\
+"""
+
+[battery]
+disabled = false
+show_always = true
+
+[character]
+success_symbol = "[ ➤]($bold fg:#f8f8f2)"
+error_symbol = "[ ➤]($bold fg:#fb4934)"
+
+[username]
+style_user = 'fg:#c9e5ff bold'
+style_root = 'fg:#ffdfdf bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+[username.aliases]
+"jlettman" = "j"
+
+[hostname]
+ssh_only = false
+style = 'bold fg:#a0f2f5'
+ssh_symbol = "[](bold fg:#ffc543)"
+format = ' on $ssh_symbol[$hostname]($style)'
+
+[hostname.aliases]
+"whiterig" = "wr"
+
+[directory]
+disabled = false
+read_only = " 󰌾"
+style = "bold fg:#b9ffe4"
+format = ":[$path]($style)[$read_only](fg:#ffbebe)"
+truncate_to_repo = false
+
+[git_commit]
+tag_symbol = '  '
+
+[git_status]
+format = " ([$all_status$ahead_behind](bold fg:#8be9fd))"
+staged = "• "
+modified = "~ "
+untracked = "+ "
+deleted = "x "
+
+[git_branch]
+symbol = " "
+format = " [$symbol$branch](bold fg:#8be9fd)"
+
+# Language Support
+[golang]
+style = 'bold fg:#007d9c'
+symbol = " "
+format = '[$symbol$version]($style) '
+
+[nodejs]
+style = 'bold fg:#84ba64'
+symbol = " "
+detect_folders = [""]
+format = '[$symbol$version]($style) '
+
+
+[python]
+symbol = " "
+style = 'bold fg:#ffdf76'
+pyenv_prefix = ""
+pyenv_version_name = true
+format = '[$symbol${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+
+[rust]
+style = "bold fg:#d3451b"
+symbol = "󱘗 "
+format = '[$symbol$version]($style) '

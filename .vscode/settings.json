@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "git/config*": "gitconfig",
+        "git/ignore": "ignore"
+    },
+    "editor.rulers": [80,160],
+    "[shellscript]": {
+        "editor.formatOnSave": true,
+        "files.eol": "\n"
+    }
+}

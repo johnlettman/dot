@@ -1,0 +1,2 @@
+#!/bin/sh
+export SNAPCRAFT_BUILD_ENVIRONMENT=lxd

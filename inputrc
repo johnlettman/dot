@@ -1,0 +1,70 @@
+set editing-mode emacs
+set keymap emacs
+
+Meta-b: backward-word
+Meta-f: forward-word
+
+"\e[1;5D": backward-word     # Ctrl-Left
+"\e[1;5C": forward-word       # Ctrl-Right
+"\e[5D": backward-word
+"\e[5C": forward-word
+"\e[5^": backward-word
+"\e[5@": forward-word
+
+Meta-d: kill-word
+"\C-w": backward-kill-word
+"\e\C-?": backward-kill-word
+"\C-_": backward-kill-word
+"\e[3;5~": kill-word
+
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# TAB cycles forward through completion choices. Press an arrow key to choose a
+# selection.
+TAB: menu-complete
+# Shift-TAB cycles backward through completion choices. Press an arrow key to
+# choose a selection.
+"\e[Z": menu-complete-backward
+
+# Substring history search using UP and DOWN arrow keys.
+$if bash
+  "\e[A": history-substring-search-backward
+  "\e[B": history-substring-search-forward
+$endif
+
+# Enable completion coloring.
+set colored-completion-prefix on
+set colored-stats on
+# Ignore case when completing.
+set completion-ignore-case on
+# Treat hypen and underscores as equivalent.
+set completion-map-case on
+# The number of completions to display without prompt; when exceeded a
+# prompt-to-display will appear.
+set completion-query-items 200
+# Automatically add slash to the end of symlinked directories when completing.
+set mark-symlinked-directories on
+# Don't automatically match files beginning with dot.
+set match-hidden-files off
+# Display the common prefix choices on the first completion then cycle the
+# available choices on the next completion.
+set menu-complete-display-prefix on
+# Turn off the completions pager.
+set page-completions off
+# Immediately display completion matches.
+set show-all-if-ambiguous on
+# Smartly complete items when the cursor is not at the end of the line.
+set skip-completed-text on
+# Keep terminal quiet and clean.
+set bell-style none
+set echo-control-characters off
+# Disable Bash 5.1 highlighted paste feature.
+# See: https://is.gd/fsgOMe
+set enable-bracketed-paste off

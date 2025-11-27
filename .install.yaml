@@ -1,0 +1,90 @@
+- defaults:
+    shell:
+      quiet: true
+    link:
+      create: true
+      relink: true
+    sync:
+      stdout: true
+      stderr: true
+      create: true
+      # Fix for the defaults including a catastrophic "--delete" option. :(
+      options: ["--safe-links"]
+
+- link:
+    ~/.inputrc:
+    ~/.zshrc:
+    ~/.starship.toml:
+    ~/.config/bat: bat
+
+    ~/.profile:
+    ~/.profile.d:
+
+    ~/.gitignore: git/ignore
+    ~/.gitconfig: git/config
+    ~/.gitconfig.iei: git/config.iei
+
+
+    ~/.gnupg/gpg.conf: gnupg/gpg.conf
+    ~/.config/htop: config/htop
+
+# - git:
+#     ~/.local/lesspipe:
+#       description: lesspipe
+#       url: https://github.com/wofr06/lesspipe.git
+#       method: clone-or-pull
+
+- ifhostname:
+    hostname: whiterig
+    unmet:
+    met:
+      - sudo:
+          - link:
+              /etc/pacman.conf: "@wr/_/etc/pacman.conf"
+              /etc/pacman-aria2.conf: "@wr/_/etc/pacman-aria2.conf"
+
+      - if:
+          cond: 'true'
+          unmet:
+            - shell:
+                - echo Skipping yay packages.
+          met:
+            - sudo:
+                - pacman:
+                    - aria2
+
+                    - fd
+                    - fzf
+                    - eza
+                    - ripgrep
+                    - ripgrep-all
+                    - zoxide
+
+            - paru:
+                - keybase-bin
+                - brave-bin
+                - slack-desktop
+                - vesktop
+                - mullvad-vpn
+
+                - bambustudio-bin
+
+                - yamllint
+                - markdownlint
+
+                # JetBrains tools
+                - datagrip
+                - datagrip-jre
+                - dataspell
+                - dataspell-jre
+                - goland
+                - goland-jre
+                - rustrover
+                - rustrover-jre
+                - rubymine
+                - pycharm
+                - webstorm
+                - webstorm-jre
+                - clion
+
+                - github-desktop-bin
