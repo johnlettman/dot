@@ -43,6 +43,8 @@
               /etc/sudoers.d/: "@wr/_/etc/sudoers.d/"
 
           - link:
+              /etc/banner: "@wr/_/etc/banner"
+
               /etc/pacman.conf: "@wr/_/etc/pacman.conf"
               /etc/pacman-aria2.conf: "@wr/_/etc/pacman-aria2.conf"
 
