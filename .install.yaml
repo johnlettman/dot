@@ -43,6 +43,8 @@
               /etc/pacman.conf: "@wr/_/etc/pacman.conf"
               /etc/pacman-aria2.conf: "@wr/_/etc/pacman-aria2.conf"
 
+              /etc/keybase/config.json: "@wr/_/etc/keybase/config.json"
+
       - if:
           cond: 'true'
           unmet:

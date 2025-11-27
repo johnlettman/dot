@@ -51,7 +51,6 @@ else
 fi
 
 # fzf-tab
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -hl --git --color=always --icons $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # disable sort when completing `git checkout`
@@ -68,10 +67,7 @@ zstyle ':completion:*' menu no
 
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:*:*'   fzf-preview '[[ ${commands[$1]} ]] && man $1 2>/dev/null || echo $1'
-
-zinit light Aloxaf/fzf-tab
-
+zstyle ':fzf-tab:complete:*:*'  fzf-preview '[[ ${commands[$1]} ]] && man $1 2>/dev/null || echo $1'
 
 # custom fzf flags
 zstyle ':fzf-tab:*' fzf-flags \
@@ -81,6 +77,8 @@ zstyle ':fzf-tab:*' fzf-flags \
   --layout=reverse
 
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
+zinit light Aloxaf/fzf-tab
 
 # history substring search
 zinit light zsh-users/zsh-history-substring-search
