@@ -21,5 +21,12 @@ It's provided as reference for anyone who would like any part of it for their ow
     ./.install.sh
     ```
 
+## Naming Scheme
+To keep everything organized, I use the following naming scheme:
+- `@` prefix: machine-specific dotfiles
+- `_` directory: root-level dotfiles
+- all others are named without the `.` prefix to differentiate repository files
+  and proper dotfiles
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
