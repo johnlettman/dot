@@ -1,1 +1,2 @@
 external-sources=true
+ignore=SC1071,SC1091

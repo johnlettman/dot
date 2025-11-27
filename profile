@@ -1,5 +1,6 @@
 #!/bin/sh
-export DOT="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+DOT="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+export DOT
 
 has_program() {
 	hash "$@" >/dev/null 2>&1
