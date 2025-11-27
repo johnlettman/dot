@@ -39,6 +39,9 @@
     unmet:
     met:
       - sudo:
+          - sync:
+              /etc/sudoers.d/: "@wr/_/etc/sudoers.d/"
+
           - link:
               /etc/pacman.conf: "@wr/_/etc/pacman.conf"
               /etc/pacman-aria2.conf: "@wr/_/etc/pacman-aria2.conf"
@@ -46,7 +49,7 @@
               /etc/keybase/config.json: "@wr/_/etc/keybase/config.json"
 
       - if:
-          cond: 'true'
+          cond: '[ -v DOT_PACKAGES ]'
           unmet:
             - shell:
                 - echo Skipping yay packages.

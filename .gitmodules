@@ -25,3 +25,6 @@
 [submodule ".plugins/sudo"]
 	path = .plugins/sudo
 	url = https://github.com/johnlettman/dotbot-sudo.git
+[submodule ".plugins/sync"]
+	path = .plugins/sync
+	url = https://github.com/j1r1k/dotbot-sync.git

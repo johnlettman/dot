@@ -9,6 +9,7 @@ dotbot_bin="${dotbot_dir}/bin/dotbot"
 
 dotbot_plugins=(
 	"if/if.py"
+	"sync/sync.py"
 	"sudo/sudo.py"
 	"git/git.py"
     "../../repos/dotbot-paru/paru.py"
