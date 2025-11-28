@@ -10,14 +10,14 @@ HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/shell/history"
 [[ -d "${HISTFILE:h}" ]] || mkdir -p "${HISTFILE:h}"
 
 setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY      # append immediately
-setopt SHARE_HISTORY           # share history between all sessions
-setopt HIST_EXPIRE_DUPS_FIRST  # when trimming history, remove duplicates first
-setopt HIST_IGNORE_ALL_DUPS    # never put duplicates in history at all
-setopt HIST_FIND_NO_DUPS       # when searching history, don’t show duplicates
-setopt HIST_IGNORE_SPACE       # don’t save commands starting with space
-setopt HIST_SAVE_NO_DUPS       # don’t write duplicates to the history file
-setopt HIST_VERIFY             # don’t execute expanded history immediately
+setopt INC_APPEND_HISTORY		# append immediately
+setopt SHARE_HISTORY			# share history between all sessions
+setopt HIST_EXPIRE_DUPS_FIRST	# when trimming history, remove duplicates first
+setopt HIST_IGNORE_ALL_DUPS		# never put duplicates in history at all
+setopt HIST_FIND_NO_DUPS		# when searching history, don’t show duplicates
+setopt HIST_IGNORE_SPACE		# don’t save commands starting with space
+setopt HIST_SAVE_NO_DUPS		# don’t write duplicates to the history file
+setopt HIST_VERIFY				# don’t execute expanded history immediately
 
 #
 # lesspipe
@@ -32,12 +32,15 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [[ ! -d $ZINIT_HOME/.git ]] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+#
+# Starship configuration
+#
 if [[ -r "${HOME}/.starship.toml" ]]; then
-    export STARSHIP_CONFIG="${HOME}/.starship.toml"
+	export STARSHIP_CONFIG="${HOME}/.starship.toml"
 elif [[ -r "${HOME}/.config/starship.toml" ]]; then
-    export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
+	export STARSHIP_CONFIG="${HOME}/.config/starship.toml"
 elif [[ -r "$(get_current_dir)/../starship.toml" ]]; then
-    export STARSHIP_CONFIG="$(get_current_dir)/../starship.toml"
+	export STARSHIP_CONFIG="$(get_current_dir)/../starship.toml"
 fi
 
 #
@@ -45,9 +48,9 @@ fi
 #
 autoload -Uz compinit
 if [[ ! -f "${HOME}/.zcompdump" ]]; then
-    compinit -u
+	compinit -u
 else
-    compinit -C -u  # use cache
+	compinit -C -u  # use cache
 fi
 
 # fzf-tab
@@ -71,10 +74,10 @@ zstyle ':fzf-tab:complete:*:*'  fzf-preview '[[ ${commands[$1]} ]] && man $1 2>/
 
 # custom fzf flags
 zstyle ':fzf-tab:*' fzf-flags \
-  --color=fg:4,fg+:2 \
-  --no-sort \
-  --height=~50% \
-  --layout=reverse
+	--color=fg:4,fg+:2 \
+	--no-sort \
+	--height=~50% \
+	--layout=reverse
 
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
@@ -94,17 +97,19 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 #
 # Plugins
 #
-zinit light wintermi/zsh-starship           # starship prompt
-zinit light MikeDacre/careful_rm            # safer `rm`
-zinit snippet OMZL::git.zsh                 # OMZ `git`
-zinit snippet OMZP::git                     # OMZ `git`
-zinit light ptavares/zsh-direnv             # load `.env` files
-zinit light ajeetdsouza/zoxide              # better `cd`
-zinit light ael-code/zsh-colored-man-pages  # `man` page colors
-zinit light z-shell/zsh-diff-so-fancy       # `diff` colors
-zinit snippet OMZP::common-aliases          # OMZ common aliases
-zinit snippet OMZP::sudo                    # OMZ `sudo`
-zinit light mattberther/zsh-pyenv           # `pyenv` support
+zinit light wintermi/zsh-starship			# starship prompt
+zinit light MikeDacre/careful_rm			# safer `rm`
+zinit snippet OMZL::git.zsh					# OMZ `git`
+zinit snippet OMZP::git						# OMZ `git`
+zinit light ptavares/zsh-direnv				# load `.env` files
+zinit light ajeetdsouza/zoxide				# better `cd`
+zinit light ael-code/zsh-colored-man-pages	# `man` page colors
+zinit light z-shell/zsh-diff-so-fancy		# `diff` colors
+zinit snippet OMZP::common-aliases			# OMZ common aliases
+zinit snippet OMZP::sudo					# OMZ `sudo`
+zinit light mattberther/zsh-pyenv			# `pyenv` support
+zinit light zap-zsh/supercharge
+zinit light lukechilds/zsh-nvm				# node version manager
 
 #
 # eza
@@ -124,9 +129,9 @@ zinit snippet OMZP::eza
 #
 # case-insensitive completion
 zstyle ':completion:*' matcher-list \
-  'm:{a-zA-Z}={A-Za-z}' \
-  'r:|[._-]=* r:|=*' \
-  'l:|=* r:|=*'
+	'm:{a-zA-Z}={A-Za-z}' \
+	'r:|[._-]=* r:|=*' \
+	'l:|=* r:|=*'
 
 #
 # Suggestions
